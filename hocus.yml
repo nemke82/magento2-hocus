@@ -1,0 +1,14 @@
+image:
+  buildContext: .
+  # The Dockerfile MUST extend `hocusdev/workspace`.
+  file: hocus.Dockerfile
+tasks:
+  - name: First task
+    prebuild: echo "This executes during the prebuild 👷🏻‍♂️"
+    workspace: echo "This executes every time the workspace is started"
+  - name: Second task
+    prebuild: echo "This also executes during the prebuild 👷🏻‍♂️"
+    workspace: python3 hello-world.py
+vscode:
+  extensions:
+    - redhat.vscode-yaml
